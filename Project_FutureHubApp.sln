@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project_FutureHub", "Project_FutureHub\Project_FutureHub.csproj", "{29221162-962E-4256-B067-AAFF7899C49A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FutureHub.Shared", "FutureHub.Shared\FutureHub.Shared.csproj", "{9AEEB5B1-E819-4CCC-B85F-38FB9D341E0E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{29221162-962E-4256-B067-AAFF7899C49A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29221162-962E-4256-B067-AAFF7899C49A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29221162-962E-4256-B067-AAFF7899C49A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AEEB5B1-E819-4CCC-B85F-38FB9D341E0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AEEB5B1-E819-4CCC-B85F-38FB9D341E0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AEEB5B1-E819-4CCC-B85F-38FB9D341E0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AEEB5B1-E819-4CCC-B85F-38FB9D341E0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
