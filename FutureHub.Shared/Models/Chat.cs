@@ -1,4 +1,4 @@
-﻿namespace Project_FutureHub.Shared.Models;
+﻿namespace FutureHub.Shared.Models;
 
 public class Chat
 {
