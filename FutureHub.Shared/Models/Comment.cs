@@ -1,6 +1,4 @@
-﻿using Project_FutureHub.Shared.Models;
-
-namespace FutureHub.Shared.Models;
+﻿namespace FutureHub.Shared.Models;
 
 public class Comment
 {
