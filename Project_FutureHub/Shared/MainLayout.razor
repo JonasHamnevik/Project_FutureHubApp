@@ -1,8 +1,18 @@
 ﻿@inherits LayoutComponentBase
 
-<PageTitle>Project_FutureHub</PageTitle>
+<PageTitle>Future Hub</PageTitle>
 
-<div class="page">
+<header>
+    <NavMenu />
+</header>
+
+<div class="container">
+    <main role="main" class="pb-3">
+        @Body
+    </main>
+</div>
+
+@*<div class="page">
     <div class="sidebar">
         <NavMenu />
     </div>
@@ -17,4 +27,4 @@
             @Body
         </article>
     </main>
-</div>
+</div>*@
