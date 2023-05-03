@@ -11,7 +11,7 @@ namespace FutureHub.Core.Data
         {
         }
 
-        public DbSet<Chat> Chat {get; set;}
+        public DbSet<Chat> Chats {get; set;}
 
         public DbSet<Comment> Comments { get; set; }
 

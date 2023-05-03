@@ -2,7 +2,7 @@
 
 public class User
 {
-    public Guid ID { get; set; }
+    public Guid Id { get; set; }
     public string FirstName { get; set; } = string.Empty;
     public string LastName { get; set; } = string.Empty;
     public ApplicationUser ApplicationUserId { get; set; }

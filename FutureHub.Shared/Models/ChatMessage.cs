@@ -2,7 +2,7 @@
 
 public class ChatMessage
 {
-    public int ID { get; set; }
+    public int Id { get; set; }
     public string Content { get; set; } = string.Empty;
     public DateTime SentAt { get; set; }
     public string SenderID { get; set; } = string.Empty;

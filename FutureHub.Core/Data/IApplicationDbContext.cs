@@ -5,7 +5,7 @@ namespace FutureHub.Core.Data;
 
 public interface IApplicationDbContext
 {
-    DbSet<Chat> Chat { get; }
+    DbSet<Chat> Chats { get; }
     DbSet<Comment> Comments { get; }
     DbSet<ChatMessage> ChatMessages { get; }
     DbSet<Contact> Contacts { get; }
