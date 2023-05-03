@@ -1,5 +1,4 @@
-﻿
-namespace Repositories.Contracts
+﻿namespace FutureHub.Core.Repositories.Contracts
 {
     public interface IRepository<TEntity> where TEntity : class
     {

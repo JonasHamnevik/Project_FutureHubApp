@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Project_FutureHub.Data;
-using Repositories.Contracts;
+﻿using FutureHub.Core.Data;
+using FutureHub.Core.Repositories.Contracts;
+using Microsoft.EntityFrameworkCore;
 
-namespace Repositories;
+namespace FutureHub.Core.Repositories;
 
 public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
 {
