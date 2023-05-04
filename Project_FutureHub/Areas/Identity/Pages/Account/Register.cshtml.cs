@@ -5,6 +5,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 using System.Text.Encodings.Web;
+using FutureHub.Core.Repositories.Contracts;
 using FutureHub.Shared.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
@@ -23,13 +24,15 @@ public class RegisterModel : PageModel
     private readonly IUserEmailStore<ApplicationUser> _emailStore;
     private readonly ILogger<RegisterModel> _logger;
     private readonly IEmailSender _emailSender;
+    private readonly IRepository<User> _repository;
 
     public RegisterModel(
         UserManager<ApplicationUser> userManager,
         IUserStore<ApplicationUser> userStore,
         SignInManager<ApplicationUser> signInManager,
         ILogger<RegisterModel> logger,
-        IEmailSender emailSender)
+        IEmailSender emailSender,
+        IRepository<User> repository)
     {
         _userManager = userManager;
         _userStore = userStore;
@@ -37,6 +40,7 @@ public class RegisterModel : PageModel
         _signInManager = signInManager;
         _logger = logger;
         _emailSender = emailSender;
+        _repository = repository;
     }
 
     /// <summary>
@@ -52,6 +56,14 @@ public class RegisterModel : PageModel
 
     public class InputModel
     {
+        [Required]
+        [Display(Name = "First Name")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
@@ -90,6 +102,14 @@ public class RegisterModel : PageModel
 
             if (result.Succeeded)
             {
+                var NewUser = new User()
+                {
+                    FirstName = Input.FirstName,
+                    LastName = Input.LastName,
+                    ApplicationUserId = user.Id
+                };
+                await _repository.AddAsync(NewUser);
+
                 _logger.LogInformation("User created a new account with password.");
 
                 var userId = await _userManager.GetUserIdAsync(user);

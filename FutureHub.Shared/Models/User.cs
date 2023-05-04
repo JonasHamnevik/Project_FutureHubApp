@@ -1,9 +1,13 @@
-﻿namespace FutureHub.Shared.Models;
+﻿using Microsoft.AspNetCore.Identity;
+
+namespace FutureHub.Shared.Models;
 
 public class User
 {
     public Guid Id { get; set; }
+    [PersonalData]
     public string FirstName { get; set; } = string.Empty;
+    [PersonalData]
     public string LastName { get; set; } = string.Empty;
     public string ApplicationUserId { get; set; }
     public ApplicationUser ApplicationUser { get; set; }
