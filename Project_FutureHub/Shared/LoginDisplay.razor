@@ -1,12 +1,47 @@
-﻿<AuthorizeView>
-    <Authorized>
-        <a href="Identity/Account/Manage">Hello, @context.User.Identity?.Name!</a>
-        <form method="post" action="Identity/Account/LogOut">
-            <button type="submit" class="nav-link btn btn-link">Log out</button>
-        </form>
-    </Authorized>
-    <NotAuthorized>
-        <a href="Identity/Account/Register">Register</a>
-        <a href="Identity/Account/Login">Log in</a>
-    </NotAuthorized>
-</AuthorizeView>
+﻿<div class="topnav">
+    <div class="flow">
+        <AuthorizeView>
+            <Authorized>
+                <a href="Identity/Account/Manage">Hello, @context.User.Identity?.Name!</a>
+                <form method="post" action="Identity/Account/LogOut">
+                    <button type="submit" class="nav-link btn btn-link">Log out</button>
+                </form>
+            </Authorized>
+            <NotAuthorized>
+                <form>
+                    <a href="Identity/Account/Register">Register</a>
+                    <a href="Identity/Account/Login">Log in</a>
+                </form>
+            </NotAuthorized>
+        </AuthorizeView>
+    </div>
+</div>
+
+
+<style>
+    .topnav {
+        overflow: hidden;
+        background-color: #460711;
+        position: absolute;
+        width: auto;
+    }
+
+        /* Navbar links */
+        .topnav a {
+            float: right;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 12px 14px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+            .topnav a:hover {
+                background-color: #2AB1F0;
+                color: #f2f2f2;
+            }
+
+    .flow {
+        justify-content: end;
+    }
+</style>

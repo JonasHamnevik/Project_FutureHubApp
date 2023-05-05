@@ -1,3 +1,112 @@
+
+body {
+    font-family: Arial, Helvetica, sans-serif
+}
+
+* {
+    box-sizing: border-box;
+}
+h1 {
+    font-size: 80px;
+    font-family: 'Bruno Ace SC', cursive;
+    text-align: center;
+    color: #f2f2f2;
+    margin-top: 100px;
+    
+}
+.grid-layout {
+    display: grid;
+    gap: 1.5rem;
+    /*grid-template-columns: repeat(3, 1fr);*/
+    padding-block: 1rem;
+    width: min(95%, 100rem);
+    margin-inline: auto;
+}
+
+.bg-img {
+    /* The image used */
+    background-image: url('css/images/future-escape.jpg');
+    min-height: 380px;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Needed to position the navbar */
+    position: relative;
+}
+
+/* Position the navbar container inside the image */
+.container {
+    position: absolute;
+    margin: 10px;
+    width: auto;
+    /*float: right;*/
+}
+
+/* The navbar */
+.topnav {
+    overflow: hidden;
+    background-color: #460711;
+    width: auto;
+    position: absolute;
+}
+
+    /* Navbar links */
+    .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 12px 14px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+        .topnav a:hover {
+            background-color: #2AB1F0;
+            color: #f2f2f2;
+        }
+/*Search*/
+.search {
+    
+}
+
+    .search input[type=text] {
+        padding: 6px;
+        margin-top: 8px;
+        font-size: 17px;
+        border: none;
+        width: 350px;
+    }
+
+   .search button {
+        float: right;
+        padding: 6px 10px;
+        margin-top: 8px;
+        margin-right: 16px;
+        background: #ddd;
+        font-size: 17px;
+        border: none;
+        cursor: pointer;
+    }
+
+        search button:hover {
+            background: #ccc;
+        }
+
+
+@media (min-width: 40em){
+    .grid-layout{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 60em) {
+    .grid-layout {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/*Old NavBar*/
+
 /*.navbar-toggler {
     background-color: rgba(255, 255, 255, 0.1);
 }
@@ -49,14 +158,26 @@
     background-color: rgba(255,255,255,0.1);
     color: white;
 }*/
-
-@media (min-width: 641px) {
+/**, :after, :before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #f2f2f2;
+    max-width: 1260px;
+}
+nav{
+    background-color: #01010b;
+    background-image: url(../wwwroot/Images/futuristic.jpg);
+}*/
+/*@media (min-width: 641px) {
     .navbar-toggler {
         display: none;
     }
 
-    .collapse {
+    .collapse {*/
         /* Never collapse the sidebar for wide screens */
-        display: block;
+        /*display: block;
     }
-}
+}*/
