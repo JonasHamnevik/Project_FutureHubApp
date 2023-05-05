@@ -2,7 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap');
 
 html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Bruno Ace SC', cursive /*'Helvetica Neue', Helvetica, Arial*/, sans-serif;
+    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
 }
 
 h1:focus {
@@ -64,6 +65,113 @@ a, .btn-link {
         content: "An error has occurred."
     }
 
+
+/*Main layout on the razor pages*/
+h1 {
+    font-size: 30px;
+    /*font-family: 'Bruno Ace SC', cursive;*/
+    color: #f2f2f2;
+    margin-top: 25px;
+}
+
+h2 {
+    font-size: 18px;
+    /*font-family: 'Bruno Ace SC', cursive;*/
+    color: #f2f2f2;
+    /*margin-top: 100px;*/
+}
+fieldset {
+    border: 2px solid #f2f2f2;
+    margin-top: 30px;
+    border-radius: 18px;
+    padding: 2em;
+}
+
+legend {
+    color: #f2f2f2;
+    margin: -50px;
+    background-color: #2B1051;
+    width: auto;
+}
+label {
+    color: black;
+}
+.checkLabel{
+    color: #f2f2f2;
+}
+/*For the navBar on Register/Login Pages*/
+.layout {
+    display: grid;
+    gap: 1.5rem;
+    /*grid-template-columns: repeat(3, 1fr);*/
+    padding-block: 1rem;
+    width: min(95%, 100rem);
+    margin-inline: auto;
+}
+
+.PageTitle {
+    font-size: 80px;
+    /*font-family: 'Bruno Ace SC', cursive;*/
+    text-align: center;
+    color: #f2f2f2;
+    margin-top: 146px;
+}
+
+.bg-RegLog {
+    /* The image used */
+    background-image: url('images/future-escape.jpg');
+    min-height: 380px;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Needed to position the navbar */
+    position: relative;
+}
+
+.RegLogNav {
+    overflow: hidden;
+    background-color: #460711;
+    width: auto;
+    position: absolute;
+}
+
+    /* Navbar links */
+    .RegLogNav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 12px 14px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+        .RegLogNav a:hover {
+            background-color: #2AB1F0;
+            color: #f2f2f2;
+        }
+
+.regBtn {
+    color: #f2f2f2;
+    background-color: #10A2D3;
+}
+
+    .regBtn :hover {
+        color: #f2f2f2;
+        background-color: #1AB1AB;
+    }
+
+@media (min-width: 40em) {
+    .layout {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 60em) {
+    .layout {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
 /*a.navbar-brand {
     white-space: normal;
     text-align: center;
