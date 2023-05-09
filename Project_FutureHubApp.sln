@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project_FutureHub", "Projec
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FutureHub.Shared", "FutureHub.Shared\FutureHub.Shared.csproj", "{9AEEB5B1-E819-4CCC-B85F-38FB9D341E0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FutureHub.Core", "FutureHub.Core\FutureHub.Core.csproj", "{4C4FA3D3-2F4C-4478-AC41-30278FAA8416}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FutureHub.Core", "FutureHub.Core\FutureHub.Core.csproj", "{4C4FA3D3-2F4C-4478-AC41-30278FAA8416}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

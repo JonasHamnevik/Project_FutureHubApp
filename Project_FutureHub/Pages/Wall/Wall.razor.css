@@ -1,0 +1,37 @@
+﻿body {
+}
+.grid-layout {
+    display: grid;
+    gap: 1.5rem;
+    /*grid-template-columns: repeat(3, 1fr);*/
+    padding-block: 1rem;
+    width: min(95%, 100rem);
+    margin-inline: auto;
+}
+
+h2 {
+    font-size: 30px;
+    /*font-family: 'Bruno Ace SC', cursive;*/
+    color: #f2f2f2;
+    /*margin-top: 100px;*/
+}
+
+p {
+    font-size: 16px;
+    /*font-family: 'Bruno Ace SC', cursive;*/
+    color: #f2f2f2;
+}
+label{
+    color: #f2f2f2;
+}
+@media (min-width: 40em) {
+    .grid-layout {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 60em) {
+    .grid-layout {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
