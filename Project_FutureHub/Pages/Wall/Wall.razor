@@ -1,44 +1,40 @@
 ﻿@page "/Wall"
+
 @inherits WallBase
 
 
 <div class="grid-layout">
     <div>
-        <AuthorizeView>
+        <AuthorizeView Context="authContext">
             <Authorized>
-               @* <h2>Create new post</h2>
-               
-                <EditForm Model="@FormData">
-                    <label>
-                        Titel
-                        <InputText @bind-Value=FormData.Title />
-                    </label>
-
-                    <label>
-                        Add Content
-                        <InputTextArea @bind-Value=FormData.Content />
-                    </label>
-
-                    <button type="submit">Submit</button>
-                </EditForm>*@
+                <CreatePostComponent></CreatePostComponent>
+                
+               @* <a href="/AddPost">Create Post</a>*@
             </Authorized>
             <NotAuthorized>
-                <h2>Sign In to make a post</h2>
+                <h2>You Need to Sign In to make a post</h2>
             </NotAuthorized>
         </AuthorizeView>
+
     </div>
     <div>
-        @* <form action="/">
-        <p><label for="post">Article</label></p>
-        <textarea id="post" name="post" rows="4" cols="50"></textarea>
-        <br>
-        <input type="submit" value="Submit">
-        </form>*@
+       @* @if (Posts == null)
+        {
+            <p><em>NOTHING HERE</em></p>
+        }
+        else
+        {
+            @foreach (var post in Posts)
+            {
+                <h2>@post.Title</h2>
+                <br />
+                <p>@post.Content</p>
+            }
+        }*@
     </div>
-    <div></div>
 </div>
 
 
 @code {
-
+    
 }

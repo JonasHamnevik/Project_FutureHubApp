@@ -10,6 +10,6 @@ public class Post
     [Required]
     public string Content { get; set; } = string.Empty;
     [Required]
-    public Guid AuthorId { get; set; }
-    public User? Author { get; set; }
+    public string AuthorId { get; set; }
+    public ApplicationUser Author { get; set; }
 }

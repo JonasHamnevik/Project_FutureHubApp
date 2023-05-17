@@ -1,0 +1,23 @@
+﻿
+@inherits CreatePostComponentBase
+
+<h3>AddPost</h3>
+<h2>Create new post</h2>
+<EditForm Model="UserPost" OnValidSubmit="CreatePost">  @*Context="formContext"*@
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <label for="Title"> Title</label>
+    <InputText id="Title" @bind-Value="@UserPost.Title" />
+    <br />
+    <br />
+    <label for="Content"> Add Content</label>
+    <br />
+    <InputTextArea @bind-Value="@UserPost.Content" />
+    <br />
+    <button type="submit" class="btn btn-outline-primary">Submit</button>
+</EditForm>
+
+@code {
+   
+}

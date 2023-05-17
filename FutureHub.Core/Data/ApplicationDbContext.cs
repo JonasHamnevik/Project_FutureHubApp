@@ -1,4 +1,5 @@
 ﻿using FutureHub.Shared.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,21 +12,55 @@ namespace FutureHub.Core.Data
         {
         }
 
-        public DbSet<Chat> Chats { get; set; }
-
         public DbSet<Comment> Comments { get; set; }
-
+        public DbSet<Chat> Chats { get; set; }
         public DbSet<ChatMessage> ChatMessages { get; set; }
-
-        //public DbSet<Contact> Contacts { get; set; }
-
         public DbSet<Post> Posts { get; set; }
-
-        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+            builder.Entity<ApplicationUser>(entity =>
+            {
+                entity.ToTable(name: "Users");
+            });
+
+            builder.Entity<IdentityRole>(entity =>
+            {
+                entity.ToTable(name: "Roles");
+            });
+            builder.Entity<IdentityUserRole<string>>(entity =>
+            {
+                entity.ToTable("UserRoles");
+                //in case you chagned the TKey type
+                //  entity.HasKey(key => new { key.UserId, key.RoleId });
+            });
+
+            builder.Entity<IdentityUserClaim<string>>(entity =>
+            {
+                entity.ToTable("UserClaims");
+            });
+
+            builder.Entity<IdentityUserLogin<string>>(entity =>
+            {
+                entity.ToTable("UserLogins");
+                //in case you chagned the TKey type
+                //  entity.HasKey(key => new { key.ProviderKey, key.LoginProvider });       
+            });
+
+            builder.Entity<IdentityRoleClaim<string>>(entity =>
+            {
+                entity.ToTable("RoleClaims");
+
+            });
+
+            builder.Entity<IdentityUserToken<string>>(entity =>
+            {
+                entity.ToTable("UserTokens");
+                //in case you chagned the TKey type
+                // entity.HasKey(key => new { key.UserId, key.LoginProvider, key.Name });
+
+            });
         }
     }
 }

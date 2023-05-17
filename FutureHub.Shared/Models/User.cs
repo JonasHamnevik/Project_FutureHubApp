@@ -11,6 +11,8 @@ public class User
     public string LastName { get; set; } = string.Empty;
     public string ApplicationUserId { get; set; }
     public ApplicationUser ApplicationUser { get; set; }
+
+
     public UserRole Role { get; set; }
 
     //public List<Contact>? Contacts { get; set; }

@@ -24,15 +24,15 @@ public class RegisterModel : PageModel
     private readonly IUserEmailStore<ApplicationUser> _emailStore;
     private readonly ILogger<RegisterModel> _logger;
     private readonly IEmailSender _emailSender;
-    private readonly IRepository<User> _repository;
+    //private readonly IRepository<ApplicationUser> _repository;
 
     public RegisterModel(
         UserManager<ApplicationUser> userManager,
         IUserStore<ApplicationUser> userStore,
         SignInManager<ApplicationUser> signInManager,
         ILogger<RegisterModel> logger,
-        IEmailSender emailSender,
-        IRepository<User> repository)
+        IEmailSender emailSender
+        /*IRepository<ApplicationUser> repository*/)
     {
         _userManager = userManager;
         _userStore = userStore;
@@ -40,7 +40,7 @@ public class RegisterModel : PageModel
         _signInManager = signInManager;
         _logger = logger;
         _emailSender = emailSender;
-        _repository = repository;
+        /*_repository = repository*/;
     }
 
     /// <summary>
@@ -95,6 +95,8 @@ public class RegisterModel : PageModel
         if (ModelState.IsValid)
         {
             var user = CreateUser();
+            user.FirstName = Input.FirstName;
+            user.LastName = Input.LastName;
 
             await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
             await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
@@ -102,13 +104,12 @@ public class RegisterModel : PageModel
 
             if (result.Succeeded)
             {
-                var NewUser = new User()
-                {
-                    FirstName = Input.FirstName,
-                    LastName = Input.LastName,
-                    ApplicationUserId = user.Id
-                };
-                await _repository.AddAsync(NewUser);
+                //var NewUser = new ApplicationUser()
+                //{
+                //    FirstName = Input.FirstName,
+                //    LastName = Input.LastName
+                //};
+                //await _repository.AddAsync(NewUser);
 
                 _logger.LogInformation("User created a new account with password.");
 

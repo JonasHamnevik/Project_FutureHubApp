@@ -1,11 +1,27 @@
-﻿using FutureHub.Shared.Models;
+﻿using FutureHub.Core.Repositories.Contracts;
+using FutureHub.Shared.Models;
 using Microsoft.AspNetCore.Components;
 
 namespace Project_FutureHub.Pages.Wall;
 
 public class WallBase: ComponentBase
 {
-    //private readonly IRepository<Post> _repository;
-    public Post FormData = new Post();
+    //[Inject]
+    //public IPostRepository? _postRepository { get; set; }
+    //public IRepository<Post>? _repository { get; set; }
 
+    //Just tested with an seperate Repo for post(Becasue I forgot how to fetch everything from the
+    // db XD)
+
+    //[CascadingParameter]
+    //public User AuthUser { get; set; }
+
+
+    //public IEnumerable<Post> Posts { get; set; }
+
+    //protected override async Task OnInitializedAsync()
+    //{
+    //    Posts = await _postRepository.GetAllAsync();
+    //    StateHasChanged();
+    //}
 }
