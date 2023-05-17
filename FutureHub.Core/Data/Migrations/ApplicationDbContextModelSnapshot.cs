@@ -103,8 +103,9 @@ namespace Project_FutureHub.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<Guid>("SenderID")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("SenderID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
@@ -330,7 +331,7 @@ namespace Project_FutureHub.Data.Migrations
 
             modelBuilder.Entity("FutureHub.Shared.Models.Chat", b =>
                 {
-                    b.HasOne("FutureHub.Shared.Models.User", "Sender")
+                    b.HasOne("FutureHub.Shared.Models.ApplicationUser", "Sender")
                         .WithMany()
                         .HasForeignKey("SenderID")
                         .OnDelete(DeleteBehavior.Cascade)

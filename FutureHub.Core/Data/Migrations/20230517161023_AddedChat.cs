@@ -15,7 +15,7 @@ namespace Project_FutureHub.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    SenderID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    SenderID = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {

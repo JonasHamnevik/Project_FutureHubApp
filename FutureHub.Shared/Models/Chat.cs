@@ -7,8 +7,8 @@ public class Chat
 {
     public int Id { get; set; }
     [Required]
-    public Guid SenderID { get; set; }
-    [ForeignKey(nameof(SenderID))]
-    public User? Sender { get; set; }
+    public string SenderID { get; set; }
+    //[ForeignKey(nameof(SenderID))]
+    public ApplicationUser? Sender { get; set; }
     public IEnumerable<ChatMessage>? Messages { get; set; }
 }
