@@ -8,5 +8,4 @@ public interface IApplicationDbContext
     DbSet<Comment> Comments { get; }
     DbSet<Post> Posts { get; }
     DbSet<Message> Messages { get; }
-    //DbSet<User> Users { get; }
 }
