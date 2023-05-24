@@ -7,7 +7,6 @@ public interface IApplicationDbContext
 {
     DbSet<Comment> Comments { get; }
     DbSet<Post> Posts { get; }
-    DbSet<Chat> Chats { get; }
-    DbSet<ChatMessage> ChatMessages { get; }
+    DbSet<Message> Messages { get; }
     //DbSet<User> Users { get; }
 }
