@@ -9,7 +9,21 @@ public class Post
     public string Title { get; set; } = string.Empty;
     [Required]
     public string Content { get; set; } = string.Empty;
-    [Required]
-    public string AuthorId { get; set; }
-    public ApplicationUser Author { get; set; }
+   
+    public string? AuthorId { get; set; }
+    public ApplicationUser? Author { get; set; }
+
+    public Post()  { }
+
+    public static Post Create(Guid id, string title, string content, string authorId) /*, ApplicationUser author*/
+    {
+        var post = new Post() 
+        { 
+            Id = id, 
+            Title = title, 
+            Content = content, 
+            AuthorId = authorId
+        };
+        return post;
+    }
 }

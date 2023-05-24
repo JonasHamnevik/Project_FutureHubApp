@@ -1,6 +1,9 @@
 ﻿using FutureHub.Core.Repositories.Contracts;
 using FutureHub.Shared.Models;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.AspNetCore.Identity;
+using System.Security.Claims;
 
 namespace Project_FutureHub.Pages.CreatePost;
 
@@ -9,19 +12,30 @@ public class CreatePostComponentBase : ComponentBase
     [Inject]
     public IPostRepository _postRepo { get; set; } = null!;
 
-    //[Parameter]
-    //public EventCallback<string> OnPostCreated { get; set; }
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationStateTask { get; set; }
 
-    //public string Title { get; set; }
-    //public string Content { get; set; }
-    public User AuthUser { get; set; }
+    //public ApplicationUser Author { get; set; }
+    public string AuthUser { get; set; } = null!;
 
     public Post UserPost { get; set; } = new Post();
 
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await authenticationStateTask;
+        var user = authState.User;
+        AuthUser = user.FindFirstValue(ClaimTypes.NameIdentifier);
+        
+        //if (user.Identity.IsAuthenticated)
+        //{
+            
+        //}
+    }
+
     public async Task CreatePost()
     {
-        //await OnPostCreated.InvokeAsync(UserPost);
-        
-        await _postRepo.CreateAsync(UserPost);
+        var post = Post.Create(Guid.NewGuid(), UserPost.Title, UserPost.Content, AuthUser);
+        await _postRepo.CreateAsync(post);
+
     }
 }

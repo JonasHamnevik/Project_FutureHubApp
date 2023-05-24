@@ -8,8 +8,6 @@
         <AuthorizeView Context="authContext">
             <Authorized>
                 <CreatePostComponent></CreatePostComponent>
-                
-               @* <a href="/AddPost">Create Post</a>*@
             </Authorized>
             <NotAuthorized>
                 <h2>You Need to Sign In to make a post</h2>
@@ -18,7 +16,7 @@
 
     </div>
     <div>
-       @* @if (Posts == null)
+        @if (Posts == null)
         {
             <p><em>NOTHING HERE</em></p>
         }
@@ -30,7 +28,7 @@
                 <br />
                 <p>@post.Content</p>
             }
-        }*@
+        }
     </div>
 </div>
 

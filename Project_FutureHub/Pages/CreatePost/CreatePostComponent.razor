@@ -1,20 +1,25 @@
-﻿
+﻿@using FutureHub.Core.Repositories.Contracts;
+@using FutureHub.Shared.Models;
+@using Microsoft.AspNetCore.Identity;
 @inherits CreatePostComponentBase
 
 <h3>AddPost</h3>
 <h2>Create new post</h2>
 <EditForm Model="UserPost" OnValidSubmit="CreatePost">  @*Context="formContext"*@
     <DataAnnotationsValidator />
-    <ValidationSummary />
 
-    <label for="Title"> Title</label>
-    <InputText id="Title" @bind-Value="@UserPost.Title" />
+    <label for="title"> Title</label>
+    <InputText id="title" @bind-Value="@UserPost.Title" />
+    <ValidationMessage For="@(() => UserPost.Title)"/>
     <br />
     <br />
-    <label for="Content"> Add Content</label>
+
+    <label for="content"> Add Content</label>
+    <InputTextArea id="content" @bind-Value="@UserPost.Content" />
+    <ValidationMessage For="@(() => UserPost.Content)" />
     <br />
-    <InputTextArea @bind-Value="@UserPost.Content" />
-    <br />
+    
+    <ValidationSummary />
     <button type="submit" class="btn btn-outline-primary">Submit</button>
 </EditForm>
 
