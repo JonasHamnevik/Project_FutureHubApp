@@ -30,6 +30,7 @@
                     </EditForm>
                 </div>*@
                 <a href="/createPost">Go make a post</a>
+                
             </Authorized>
             <NotAuthorized>
                 <h2>You Need to Sign In to make a post</h2>
@@ -47,8 +48,9 @@
             @foreach (var post in Posts)
             {
                 <h2 class="postTitle">@post.Title</h2>
-                
+
                 <p class="postContent">@post.Content</p>
+                <p class="postContent">@post.Created.ToString("dd/MM/yyyy")</p>
                 <hr />
             }
         }
