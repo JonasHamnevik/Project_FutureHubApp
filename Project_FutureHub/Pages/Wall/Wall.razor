@@ -7,7 +7,29 @@
     <div>
         <AuthorizeView Context="authContext">
             <Authorized>
-                <CreatePostComponent></CreatePostComponent>
+                @*<CreatePostComponent />*@
+               @* <div class="test">
+                    <h3>AddPost</h3>
+                    <h2>Create new post</h2>
+                    <EditForm Model="UserPost" OnValidSubmit="@CreatePost">
+                        <DataAnnotationsValidator />
+
+                        <label for="title"> Title</label>
+                        <InputText id="title" @bind-Value="@UserPost.Title" />
+                        <ValidationMessage For="@(() => UserPost.Title)" />
+                        <br />
+                        <br />
+
+                        <label for="content"> Add Content</label>
+                        <InputTextArea id="content" @bind-Value="@UserPost.Content" />
+                        <ValidationMessage For="@(() => UserPost.Content)" />
+                        <br />
+
+                        <ValidationSummary />
+                        <button type="submit" class="btn btn-outline-primary">Submit</button>
+                    </EditForm>
+                </div>*@
+                <a href="/createPost">Go make a post</a>
             </Authorized>
             <NotAuthorized>
                 <h2>You Need to Sign In to make a post</h2>
@@ -15,7 +37,7 @@
         </AuthorizeView>
 
     </div>
-    <div>
+    <div class="col-span-2 test">
         @if (Posts == null)
         {
             <p><em>NOTHING HERE</em></p>
@@ -24,9 +46,10 @@
         {
             @foreach (var post in Posts)
             {
-                <h2>@post.Title</h2>
-                <br />
-                <p>@post.Content</p>
+                <h2 class="postTitle">@post.Title</h2>
+                
+                <p class="postContent">@post.Content</p>
+                <hr />
             }
         }
     </div>

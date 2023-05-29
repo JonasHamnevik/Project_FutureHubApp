@@ -15,14 +15,15 @@ public class Post
 
     public Post()  { }
 
-    public static Post Create(Guid id, string title, string content, string authorId) /*, ApplicationUser author*/
+    public static Post Create(Guid id, string title, string content, string authorId, ApplicationUser author) /*, ApplicationUser author*/
     {
         var post = new Post() 
         { 
             Id = id, 
             Title = title, 
             Content = content, 
-            AuthorId = authorId
+            AuthorId = authorId,
+            Author = author
         };
         return post;
     }
