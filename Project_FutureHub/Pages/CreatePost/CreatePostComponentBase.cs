@@ -9,11 +9,12 @@ namespace Project_FutureHub.Pages.CreatePost;
 public class CreatePostComponentBase : ComponentBase
 {
     [Inject]
-    public IPostRepository _postRepo { get; set; } = null!;
+    public IRepository<Post> _repository { get; set; }
+    [Inject]
+    public NavigationManager NavManager { get; set; }
 
     [CascadingParameter]
     private Task<AuthenticationState> authenticationStateTask { get; set; }
-
 
     public ApplicationUser Author { get; set; }
     public string AuthUser { get; set; } = null!;
@@ -33,9 +34,9 @@ public class CreatePostComponentBase : ComponentBase
         AuthUser = user.FindFirstValue(ClaimTypes.NameIdentifier);
 
         var post = Post.Create(Guid.NewGuid(), UserPost.Title, UserPost.Content, AuthUser, Author);
-        await _postRepo.CreateAsync(post);
-        StateHasChanged();
+        await _repository.AddAsync(post);
 
-        await _postRepo.GetAllAsync();
+        StateHasChanged();
+        NavManager.NavigateTo("/Wall");
     }
 }

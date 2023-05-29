@@ -1,25 +1,30 @@
-﻿@page "/createPost"
+﻿@page "/CreatePost"
 @inherits CreatePostComponentBase
 
-<h3>AddPost</h3>
-<h2>Create new post</h2>
-<EditForm Model="UserPost" OnValidSubmit="@CreatePost">
-    <DataAnnotationsValidator />
+<div class="grid-layout">
+    <div></div>
+    <div class="col-span-2">
+        <h3 class="addPost">Create new post</h3>
+        <EditForm Model="UserPost" OnValidSubmit="@CreatePost">
+            <DataAnnotationsValidator />
 
-    <label for="title"> Title</label>
-    <InputText id="title" @bind-Value="@UserPost.Title" />
-    <ValidationMessage For="@(() => UserPost.Title)" />
-    <br />
-    <br />
+            <label for="title"> Title</label>
+            <InputText id="title" @bind-Value="@UserPost.Title" />
+            <ValidationMessage For="@(() => UserPost.Title)" />
+            <br />
+            <br />
 
-    <label for="content"> Add Content</label>
-    <InputTextArea id="content" @bind-Value="@UserPost.Content" />
-    <ValidationMessage For="@(() => UserPost.Content)" />
-    <br />
+            <label for="content"> Add Content</label>
+            <InputTextArea id="content" @bind-Value="@UserPost.Content" />
+            <ValidationMessage For="@(() => UserPost.Content)" />
+            <br />
 
-    <ValidationSummary />
-    <button type="submit" class="btn btn-outline-primary">Submit</button>
-</EditForm>
+            <ValidationSummary />
+            <button type="submit" class="postBtn">Submit</button>
+        </EditForm>
+    </div>
+    <div></div>
+</div>
 
 @code {
    
