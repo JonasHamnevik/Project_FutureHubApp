@@ -7,6 +7,6 @@ namespace Project_FutureHub.Pages.Chat;
 public class ChatComponentBase : ComponentBase
 {
     [Inject]
-    public IRepository<Message> Repository { get; set; }
+    public IRepository<Inbox> Repository { get; set; }
 
 }

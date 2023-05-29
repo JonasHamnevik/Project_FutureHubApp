@@ -12,9 +12,9 @@ namespace FutureHub.Core.Data
         {
         }
 
+        public DbSet<Inbox> Inboxes { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<Comment> Comments { get; set; }
-        //public DbSet<Contact> Contacts { get; set; }
         public DbSet<Post> Posts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
