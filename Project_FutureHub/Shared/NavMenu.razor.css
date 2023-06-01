@@ -12,7 +12,6 @@ h1 {
     text-align: center;
     color: #f2f2f2;
     margin-top: 100px;
-    
 }
 .grid-layout {
     display: grid;
@@ -22,13 +21,14 @@ h1 {
     width: min(95%, 100rem);
     margin-inline: auto;
 }
-
 .bg-img {
     /* The image used */
-    background-image: url('css/images/future-escape.jpg');
+    background-image: url('css/images/hands.jpg');
     min-height: 380px;
+    max-width: 100%;
+    /*object-fit: fill;*/
     /* Center and scale the image nicely */
-    background-position: center;
+    background-position: right;
     background-repeat: no-repeat;
     background-size: cover;
     /* Needed to position the navbar */

@@ -3,7 +3,8 @@
 
 html, body {
     font-family: 'Bruno Ace SC', cursive /*'Helvetica Neue', Helvetica, Arial*/, sans-serif;
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+    /*background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);*/
+    background-color: black;
 }
 
 h1:focus {
@@ -91,7 +92,7 @@ legend {
     color: #f2f2f2;
     margin: -50px;
     margin-left: 10px;
-    background-color: #2B1051;
+    background-color:black /*#2B1051*/;
     width: auto;
 }
 /*label {
@@ -120,8 +121,8 @@ legend {
 
 .bg-RegLog {
     /* The image used */
-    background-image: url('images/future-escape.jpg');
-    min-height: 380px;
+    background-image: url('images/hands.jpg');
+    min-height: 350px;
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;

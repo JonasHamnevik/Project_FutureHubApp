@@ -9,15 +9,16 @@ namespace Project_FutureHub.Pages.CreatePost;
 public class CreatePostComponentBase : ComponentBase
 {
     [Inject]
-    public IRepository<Post> _repository { get; set; }
+    private IRepository<Post> _repository { get; set; }
     [Inject]
-    public NavigationManager NavManager { get; set; }
+    private NavigationManager NavManager { get; set; }
 
     [CascadingParameter]
     private Task<AuthenticationState> authenticationStateTask { get; set; }
 
-    public ApplicationUser Author { get; set; }
-    public string AuthUser { get; set; } = null!;
+    private ApplicationUser Author { get; set; }
+    private string AuthUser { get; set; } = null!;
+
     public Post UserPost { get; set; } = new Post();
 
     //protected override async Task OnInitializedAsync()

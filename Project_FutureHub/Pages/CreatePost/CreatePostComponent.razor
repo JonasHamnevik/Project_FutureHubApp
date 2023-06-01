@@ -2,8 +2,7 @@
 @inherits CreatePostComponentBase
 
 <div class="grid-layout">
-    <div></div>
-    <div class="col-span-2">
+    <div>
         <h3 class="addPost">Create new post</h3>
         <EditForm Model="UserPost" OnValidSubmit="@CreatePost">
             <DataAnnotationsValidator />
@@ -15,7 +14,7 @@
             <br />
 
             <label for="content"> Add Content</label>
-            <InputTextArea id="content" @bind-Value="@UserPost.Content" />
+            <InputTextArea id="content" class="textarea" @bind-Value="@UserPost.Content" />
             <ValidationMessage For="@(() => UserPost.Content)" />
             <br />
 
@@ -23,7 +22,6 @@
             <button type="submit" class="postBtn">Submit</button>
         </EditForm>
     </div>
-    <div></div>
 </div>
 
 @code {
