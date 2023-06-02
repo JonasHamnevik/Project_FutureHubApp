@@ -101,6 +101,9 @@ legend {
 .checkLabel{
     color: #f2f2f2;
 }
+.information{
+    color: #f2f2f2;
+}
 /*For the navBar on Register/Login Pages*/
 .layout {
     display: grid;

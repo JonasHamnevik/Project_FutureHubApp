@@ -16,26 +16,30 @@
         </AuthorizeView>
 
     </div>
-    <div class="col-span-2 test">
-        @if (Posts == null)
-        {
-            <p><em>NOTHING HERE</em></p>
-        }
-        else
-        {
-            @foreach (var post in Posts)
+    <fieldset class="col-span-2">
+        <legend>Wall</legend>
+        <div class=" test">
+            @if (Posts == null)
             {
-                <h2 class="postTitle">@post.Title</h2>
-
-                <p class="postContent">@post.Content</p>
-                <p class="postContent">@post.Created.ToString("dd/MM/yyyy")</p>
-                <hr />
+                <p><em>NOTHING HERE</em></p>
             }
-        }
-    </div>
+            else
+            {
+
+                @foreach (var post in Posts)
+                {
+                    <h2 class="postTitle">@post.Title</h2>
+
+                    <p class="postContent">@post.Content</p>
+                    <p class="postContent">@post.Created.ToString("dd/MM/yyyy")</p>
+                    <hr />
+                }
+            }
+        </div>
+    </fieldset>
 </div>
 
 
 @code {
-    
+
 }
