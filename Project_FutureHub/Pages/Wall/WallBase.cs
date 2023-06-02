@@ -7,8 +7,8 @@ namespace Project_FutureHub.Pages.Wall;
 public class WallBase: ComponentBase
 {
     [Inject]
-    public IRepository<Post>? _repository { get; set; }
     //public IRepository<Post>? _repository { get; set; }
+    public IRepository<Post>? _repository { get; set; }
 
     public IEnumerable<Post>? Posts { get; set; }
 

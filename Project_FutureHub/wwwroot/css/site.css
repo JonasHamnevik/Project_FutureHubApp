@@ -122,7 +122,7 @@ legend {
 .bg-RegLog {
     /* The image used */
     background-image: url('images/hands.jpg');
-    min-height: 350px;
+    min-height: 380px;
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;

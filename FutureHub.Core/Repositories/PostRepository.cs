@@ -22,7 +22,8 @@ public class PostRepository : IPostRepository
 
     public async Task<IEnumerable<Post>> GetAllAsync()
     {
-        return await _context.Posts.ToListAsync();
+        return await _context.Posts
+            .ToListAsync();
     }
 
     //public async Task<Post> CreateAsync(Post post)
