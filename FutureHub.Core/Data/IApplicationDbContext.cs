@@ -7,6 +7,5 @@ public interface IApplicationDbContext
 {
     DbSet<Comment> Comments { get; }
     DbSet<Post> Posts { get; }
-    DbSet<Inbox> Inboxes { get; }
     DbSet<Message> Messages { get; }
 }
