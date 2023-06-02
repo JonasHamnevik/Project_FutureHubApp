@@ -30,6 +30,7 @@ public class CreatePostComponentBase : ComponentBase
     //}
     public async Task CreatePost()
     {
+        //Here we check if logged in user is validated and get the Id of the user to save it on det post
         var authState = await authenticationStateTask;
         var user = authState.User;
         AuthUser = user.FindFirstValue(ClaimTypes.NameIdentifier);

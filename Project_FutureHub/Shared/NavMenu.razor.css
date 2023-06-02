@@ -62,6 +62,7 @@ h1 {
     }
 
         .topnav a:hover {
+            /*background-color: #FDB900;*/
             background-color: #2AB1F0;
             color: #f2f2f2;
         }

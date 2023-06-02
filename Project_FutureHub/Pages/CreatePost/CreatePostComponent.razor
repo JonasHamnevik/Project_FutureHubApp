@@ -1,29 +1,46 @@
 ﻿@page "/CreatePost"
 @inherits CreatePostComponentBase
 
-<div class="grid-layout">
-    <div>
-        <h3 class="addPost">Create new post</h3>
-        <EditForm Model="UserPost" OnValidSubmit="@CreatePost">
-            <DataAnnotationsValidator />
-
-            <label for="title"> Title</label>
-            <InputText id="title" @bind-Value="@UserPost.Title" />
-            <ValidationMessage For="@(() => UserPost.Title)" />
-            <br />
-            <br />
-
-            <label for="content"> Add Content</label>
-            <InputTextArea id="content" class="textarea" @bind-Value="@UserPost.Content" />
-            <ValidationMessage For="@(() => UserPost.Content)" />
-            <br />
-
-            <ValidationSummary />
-            <button type="submit" class="postBtn">Submit</button>
-        </EditForm>
+<div class="container">
+    <div class="row">
+        <div class="col-6 col-md-4">
+            <h3 class="addPost">Create new post</h3>
+            <p class="info">
+                Here you can create a post
+            </p>
+            <p class="info">
+                -Make the title descriptive
+            </p>
+            <p class="info">
+                -Write your idéa
+            </p>
+        </div>
+        <div class="col-md-8">
+            <div style="padding-bottom: 50px;">
+                <EditForm Model="UserPost" OnValidSubmit="@CreatePost">
+                    <DataAnnotationsValidator />
+                    <div class="postTitle">
+                        <label for="title"> Title</label>
+                        <InputText id="title" @bind-Value="@UserPost.Title" />
+                        <ValidationMessage For="@(() => UserPost.Title)" />
+                    </div>
+                    <br />
+                    <div class="postContent">
+                        <label for="content"> Add Content</label>
+                        <InputTextArea id="content" @bind-Value="@UserPost.Content" />
+                        <ValidationMessage For="@(() => UserPost.Content)" />
+                    </div>
+                    <br />
+                    <ValidationSummary />
+                    <button class="btn postBtn">Submit</button> @*type="submit"*@
+                </EditForm>
+            </div>
+        </div>
     </div>
+
 </div>
 
+
 @code {
-   
+
 }

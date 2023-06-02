@@ -6,26 +6,49 @@
 label {
     color: #f2f2f2;
     display: block;
+    font-size: 20px;
 }
+.postTitle{
 
-input,
-button, textarea {
-    padding: 1em;
 }
-.textarea {
+.postTitle ::deep input {
     width: 100%;
-    height: 500px;
+    height: 30px;
     padding: 12px 20px;
     box-sizing: border-box;
     border: 2px solid #ccc;
+}
+.postContent {
+   /* width: 100%;
+    height: 300px;*/
+    /*padding: 12px 20px;*/
+    /*box-sizing: border-box;
     border-radius: 4px;
-    background-color: #f8f8f8;
     font-size: 16px;
+    resize: none;*/
+}
+    .postContent ::deep textarea {
+        width: 100%;
+        height: 300px;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        background-color: #f8f8f8;
+        font-size: 16px;
+        resize: vertical;
+    }
+.info{
+    color: #f2f2f2;
 }
 .postBtn {
+    width: 100%;
     color: #f2f2f2;
     background-color: #10A2D3;
+    /*font-size: 20px 40px;*/
+    padding: 16px 80px;
 }
+
     .postBtn :hover {
         color: #f2f2f2;
         background-color: #1AB1AB;
